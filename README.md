@@ -1,5 +1,6 @@
 A simple Web page layout using the CSS's Grid Layout properties.
-Access the project's site here: 
+Access the project's site here:
+https://eduardo-sborges.github.io/WebPage_CSS_Grid_Layout/
 
 ----> Notas do Desenvolvedor (PT-BR)
 
