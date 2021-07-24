@@ -1,3 +1,7 @@
+/*-----------------------------------------------------------
+----------------Resetando os estilos do HTML-----------------
+-----------------------------------------------------------*/
+
 body,
 p,
 h1,
@@ -7,15 +11,12 @@ blockquote {
   padding: 0px;
   margin: 0px;
 }
-
 body {
-  font-family: 'Vollkorn', Georgia, serif;
+  font-family: "Volkorn", Georgia, serif;
 }
-
 li {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
@@ -26,40 +27,22 @@ img {
   border-radius: 5px;
 }
 
-/* GRID GERAL */
+/*-----------------------------------------------------------
+-------------------------Grid-Geral--------------------------
+-----------------------------------------------------------*/
 
 .estrutura {
   display: grid;
   grid-template-columns: minmax(160px, 1fr) 3fr 300px;
   grid-template-areas:
-    'header header header'
-    'sidenav content anuncios'
-    'footer footer footer';
+    "header header header"
+    "sidenav content anuncios"
+    "footer footer footer";
 }
 
-@media (max-width: 1200px) {
-  .estrutura {
-    grid-template-areas:
-      'header header header'
-      'sidenav content content'
-      'sidenav anuncios anuncios'
-      'footer footer footer';
-  }
-}
-
-@media (max-width: 760px) {
-  .estrutura {
-    grid-template-columns: 100%;
-    grid-template-areas:
-      'header'
-      'sidenav'
-      'content'
-      'anuncios'
-      'footer';
-  }
-}
-
-/*HEADER*/
+/*-----------------------------------------------------------
+---------------------------Header----------------------------
+-----------------------------------------------------------*/
 
 .header {
   grid-area: header;
@@ -84,39 +67,25 @@ img {
   padding: 10px;
   color: white;
   font-size: 1.125em;
-  background: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   transition: 0.1s;
 }
-
 .header nav a:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header li + li {
   margin-left: 30px;
 }
 
-@media (max-width: 760px) {
-  .header {
-    grid-template-columns: auto;
-  }
-  .logo {
-    margin-bottom: 20px;
-  }
-  .header nav a {
-    font-size: 1em;
-  }
-  .header li + li {
-    margin-left: 10px;
-  }
-}
-
-/*SIDENAV*/
+/*-----------------------------------------------------------
+---------------------------Sidenav---------------------------
+-----------------------------------------------------------*/
 
 .sidenav {
   grid-area: sidenav;
-  background: #fafbfc;
+  background-color: #fafbfc;
   padding: 30px;
 }
 
@@ -125,7 +94,7 @@ img {
   min-width: 60px;
   max-width: 100px;
   margin: 0 auto 30px auto;
-  background: white;
+  background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
@@ -133,48 +102,12 @@ img {
 }
 
 .sidenav li a:hover {
-  background: #b07dfb;
+  background-color: #b07dfb;
 }
 
-@keyframes seta {
-  from {
-    right: 30px;
-  }
-  to {
-    right: 20px;
-  }
-}
-
-@media (max-width: 760px) {
-  .sidenav {
-    position: relative;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
-  .sidenav::after {
-    content: '→';
-    position: absolute;
-    top: 5px;
-    right: 30px;
-    color: rgba(0, 0, 0, 0.3);
-    animation: seta 0.5s ease-in 0s infinite alternate;
-  }
-  .sidenav ul {
-    display: flex;
-  }
-  .sidenav li {
-    flex: 1 0 60px;
-  }
-  .sidenav {
-    padding: 0 30px;
-  }
-  .sidenav li a {
-    margin: 30px 30px 30px 0;
-  }
-}
-
-/*CONTENT*/
+/*-----------------------------------------------------------
+---------------------------Content---------------------------
+-----------------------------------------------------------*/
 
 .content {
   grid-area: content;
@@ -186,14 +119,8 @@ img {
   gap: 30px;
 }
 
-@media (max-width: 600px) {
-  .content {
-    grid-template-columns: auto;
-  }
-}
-
 .col-wide {
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
 }
 
 .imagem-1 {
@@ -201,11 +128,13 @@ img {
   align-self: end;
 }
 
-.item-2 {
+.imagem-2 {
   align-self: end;
 }
 
-/*ESTILOS CONTENT*/
+/*-----------------------------------------------------------
+-----------------------Estilos-Content-----------------------
+-----------------------------------------------------------*/
 
 p {
   font-size: 1.2em;
@@ -218,7 +147,9 @@ p {
   margin-top: 30px;
 }
 
-/*TITULO*/
+/*-----------------------------------------------------------
+--------------------------Titulos----------------------------
+-----------------------------------------------------------*/
 
 .titulo {
   color: #b07dfb;
@@ -235,7 +166,9 @@ p {
   font-style: italic;
 }
 
-/*CARACTERISTICAS*/
+/*-----------------------------------------------------------
+-----------------------Caracteristicas-----------------------
+-----------------------------------------------------------*/
 
 .caracteristicas {
   display: flex;
@@ -267,7 +200,7 @@ p {
 }
 
 .rotulo {
-  background: white;
+  background-color: white;
   border-radius: 0 0 5px 5px;
   padding: 5px 0;
   position: relative;
@@ -282,11 +215,10 @@ p {
 
 .citacao,
 .atributos {
-  align-self: start;
   padding: 30px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  border-radius: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
   background: linear-gradient(135deg, #8844ee, #b07dfb);
+  align-self: start;
 }
 
 .citacao p {
@@ -309,11 +241,13 @@ p {
   border-top: 2px solid #b07dfb;
 }
 
-/*ANUNCIOS*/
+/*-----------------------------------------------------------
+--------------------------Anuncios---------------------------
+-----------------------------------------------------------*/
 
 .anuncios {
   grid-area: anuncios;
-  background: #fafbfc;
+  background-color: #fafbfc;
   display: grid;
   align-content: start;
   padding: 30px;
@@ -321,7 +255,9 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-/*FOOTER*/
+/*-----------------------------------------------------------
+---------------------------Footer----------------------------
+-----------------------------------------------------------*/
 
 .footer {
   grid-area: footer;
@@ -332,4 +268,88 @@ p {
   color: white;
   text-align: center;
   padding: 30px;
+}
+
+/*-----------------------Responsivo--------------------------
+--------------------BreakPoint-de-1200px---------------------
+--------------------------Tablets--------------------------*/
+
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav anuncios anuncios"
+      "footer footer footer";
+  }
+}
+
+/*-----------------------Responsivo--------------------------
+---------------------BreakPoint-de-760px---------------------
+-------------------------Celulares-------------------------*/
+
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "anuncios"
+      "footer";
+  }
+  .header {
+    grid-template-columns: auto;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .header nav a {
+    font-size: 1em;
+  }
+  .header li + li {
+    margin-left: 10px;
+  }
+  .sidenav {
+    position: relative; /*Para que seja colocada a seta de apoio a rolagem*/
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /*Permite usar o "touch" para rolar a barra*/
+    -ms-overflow-style: -ms-autohiding-scrollbar; /*Esconde a barra de rolagem em dispositivos microsoft*/
+  }
+  @keyframes seta {
+    /* Anima seta de apoio a rolagem */
+    from {
+      right: 30px;
+    }
+    to {
+      right: 20px;
+    }
+  }
+  .sidenav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate; /* Referencia a animacão da seta de apoio a rolagem */
+  }
+  .sidenav ul {
+    display: flex;
+  }
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+  .sidenav li a {
+    margin: 30px 30px 30px 0px;
+  }
+}
+
+/*-----------------------Responsivo--------------------------
+---------------------BreakPoint-de-760px---------------------
+------------------------Celulares-II-----------------------*/
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
 }
